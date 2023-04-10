@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="Palindromechecker.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+   <div class="palindromechecker">
+    <div>
+        <input type="text" id="usersinput" placeholder="Place Your Word here">
+    </div>
+    <div>
+        <button id="button" onclick="Checker()">Check</button>
+    </div>
+    <div id="Answer">
+        
+    </div>
+   </div> 
+   
+</body>
+<script>
+   
+    function Checker() {
+        let input = document.getElementById("usersinput").value;
+        let reversedinput  = input.split("").reverse().join("")
+       
+        if (reversedinput == input) {
+            let ans = "It is a palindrome"
+            document.getElementById("Answer").innerText = ans;
+            $(document.getElementById("Answer")).css("color", "green");
+        }
+        else{
+            let ans = "It is not a palindrome"
+            document.getElementById("Answer").innerText = ans;
+            $(document.getElementById("Answer")).css("color", "red");
+        }
+        
+        
+    }
+
+</script>
+</html>
